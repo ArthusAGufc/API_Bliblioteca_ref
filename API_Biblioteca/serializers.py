@@ -5,18 +5,18 @@ from API_Biblioteca.models import *
 from datetime import datetime, timedelta
 
 # FUNCIONALIDADE NOVA - INCLUIR ISBN E ESTADO DO LIVRO
-class Livro_Serializer(serializers.ModelSerializer):
+class livro_serializer(serializers.ModelSerializer):
     class Meta:
         model = Livro
         fields = ['id', 'isbn', 'titulo', 'autor', 'categoria', 'data_pub', 'estado']
         
-class Leitor_Serializer(serializers.ModelSerializer):
+class leitor_serializer(serializers.ModelSerializer):
     class Meta:
         model = Leitor
         fields = ['id', 'nome', 'idade', 'cidade'] 
 
 
-class Emprestimo_Serializer(serializers.ModelSerializer):
+class emprestimo_serializer(serializers.ModelSerializer):
     class Meta:
         model = Emprestimo
         fields = ['id', 'leitor', 'livro', 'data_emprestimo', 'data_devolucao']
